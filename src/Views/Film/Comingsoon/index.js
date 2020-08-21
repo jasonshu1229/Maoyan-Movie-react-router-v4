@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import store from '../../../Redux/index';
-import {getList} from './actionCreator';
+import {getListThunk} from './actionCreator';
 import FilmItem from '../FilmItem/index';
 
 class Comingsoon extends Component{
@@ -13,7 +13,7 @@ class Comingsoon extends Component{
 
   componentDidMount() {
     if (store.getState().isList.length === 0) {
-      store.dispatch(getList()) //action
+      store.dispatch(getListThunk()) //action
     } else {
       // 缓存数据
       console.log('缓存数据')
